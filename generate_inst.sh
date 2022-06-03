@@ -18,12 +18,13 @@ do
 			FILE_SERVICE=$(echo $line | cut -d";" -f6)
 
 			cp instance_template new_instance
-
-			sed -i "s|<##NAME##>|${1}_${NAME}|g" new_instance
+		
+			sed -i "s|<##INFRA_NAME##>|${1}|g" new_instance
+			sed -i "s|<##NAME##>|${NAME}|g" new_instance
 			sed -i "s|<##KEY_NAME##>|${KEY_NAME}|g" new_instance
 			sed -i "s|<##AMI##>|${AMI}|g" new_instance
-			sed -i "s|<##SG_NAME##>|${1}_${SG_NAME}|g" new_instance
-			sed -i "s|<##SUBNET##>|${1}_${SUBNET}|g" new_instance
+			sed -i "s|<##SG_NAME##>|${SG_NAME}|g" new_instance
+			sed -i "s|<##SUBNET##>|${SUBNET}|g" new_instance
 			sed -i "s|<##INSTANCE_TYPE##>|${INSTANCE_TYPE}|g" new_instance
 			sed -i "s|<##ASSOCIATE_PUBLIC_IP_ADDRESS##>|${ASSOCIATE_PUBLIC_IP_ADDRESS}|g" new_instance
 			sed -i "s|<##FILE_SERVICE##>|${FILE_SERVICE}|g" new_instance
