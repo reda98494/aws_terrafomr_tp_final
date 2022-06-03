@@ -1,0 +1,6 @@
+SG_NAME;PORT;PROTOCOL;SG_TYPE;SOURCE
+sg_admin_machine_reda;22;tcp;CIDR;0.0.0.0/0
+sg_proxy_reda;22;tcp;SG;sg_admin_machine_reda
+sg_proxy_reda;80;tcp;CIDR;0.0.0.0/0
+sg_web_reda;22;tcp;SG;sg_admin_machine_reda
+sg_web_reda;80;tcp;SG;sg_proxy_reda
