@@ -56,7 +56,7 @@ do
 	GROUP_NAME=$(echo $SGROUP | cut -d"." -f1)
 	GEN_FILE="GENERATED/${GROUP_NAME}.tf"
 	cp security_group_template $GEN_FILE
-
+	sed -i "s|<##INFRA_NAME##>|$1|g" $GEN_FILE
 	sed -i "s|<##SG_NAME##>|${GROUP_NAME}|g" $GEN_FILE
 
 	LTOWRITE=$(cat -n ${GEN_FILE} | grep "<##INGRESS_RULES##>" | sed 's|\t| |g' | tr -s " " | cut -d" " -f2)
