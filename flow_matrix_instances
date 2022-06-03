@@ -1,6 +1,6 @@
 NOM;SG_GROUP;SUBNET;INST_TYPE;ASSOC_PUBLIC_IP;SERVICE
-admin_machine_reda;sg_admin_machine_reda;aws_public_subnet01_reda;t2.micro;true;null.sh
-proxy_reda;sg_proxy_reda;aws_public_subnet01_reda;t2.micro;true;null.sh
-web01_reda;sg_web_reda;aws_private_subnet02_reda;t2.micro;false;install_web.sh
-web02_reda;sg_web_reda;aws_private_subnet03_reda;t2.micro;false;install_web.sh
-web03_reda;sg_web_reda;aws_private_subnet04_reda;t2.micro;false;install_web.sh
+admin_machine_reda;sg_admin_machine_reda;subadm;t2.micro;true;null.sh
+proxy_reda;sg_proxy_reda;subadm;t2.micro;true;null.sh
+web01_reda;sg_web_reda;priv1;t2.micro;false;install_web.sh
+web02_reda;sg_web_reda;priv2;t2.micro;false;install_web.sh
+web03_reda;sg_web_reda;priv3;t2.micro;false;install_web.sh
