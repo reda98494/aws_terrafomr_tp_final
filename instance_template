@@ -1,4 +1,4 @@
-resource "aws_instance" "<##INFRA_NAME##>_instance" {
+resource "aws_instance" "<##INFRA_NAME##>_<##NAME##>_instance" {
         key_name = "<##KEY_NAME##>"
         ami = "<##AMI##>"
         security_groups = ["${aws_security_group.<##INFRA_NAME##>_<##SG_NAME##>.id}"]
@@ -7,6 +7,6 @@ resource "aws_instance" "<##INFRA_NAME##>_instance" {
         associate_public_ip_address = "<##ASSOCIATE_PUBLIC_IP_ADDRESS##>"
 	  user_data = "${file("<##FILE_SERVICE##>")}"
         tags = {
-                Name = "<##INFRA_NAME##>_instance"
+                Name = "<##INFRA_NAME##>_<##NAME##>_instance"
         }
 }
