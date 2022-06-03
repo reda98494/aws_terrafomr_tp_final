@@ -32,7 +32,7 @@ do
 			if [ "$TYPE" == "SG" ]
 			then
 				SG_TYPE="security_groups"
-				SG_TEMPLATE="\$\{aws_security_group.${SOURCE}.id\}"
+				SG_TEMPLATE="\$\{aws_security_group.${1}_${SOURCE}.id\}"
 			else
 				SG_TYPE="cidr_blocks"
 				SG_TEMPLATE="${SOURCE}"
